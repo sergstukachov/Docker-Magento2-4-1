@@ -22,10 +22,10 @@ services:
       - "3309:3306"
     container_name: mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=your_pass*
-      - MYSQL_DATABASE=your_db_name*
-      - MYSQL_USER=root*
-      - MYSQL_PASSWORD=your_pass
+      - MYSQL_ROOT_PASSWORD=dev01
+      - MYSQL_DATABASE=insider
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=devo1
     volumes:
       - ./mysql:/var/lib/mysql
 

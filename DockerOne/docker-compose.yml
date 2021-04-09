@@ -23,9 +23,9 @@ services:
     container_name: mysql
     environment:
       - MYSQL_ROOT_PASSWORD=dev01
-      - MYSQL_DATABASE=insider
+      - MYSQL_DATABASE=magento
       - MYSQL_USER=root
-      - MYSQL_PASSWORD=devo1
+      - MYSQL_PASSWORD=dev01
     volumes:
       - ./mysql:/var/lib/mysql
 

@@ -14,7 +14,7 @@ return [
         'connection' => [
             'default' => [
                 'host' => 'mysql',
-                'dbname' => 'insider',
+                'dbname' => 'magento',
                 'username' => 'root',
                 'password' => 'dev01',
                 'model' => 'mysql4',

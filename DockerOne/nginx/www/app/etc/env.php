@@ -75,7 +75,7 @@ return [
         'vertex' => 1
     ],
     'downloadable_domains' => [
-        'insider241.loc'
+        'magento241.loc'
     ],
     'install' => [
         'date' => 'Fri, 29 Jan 2021 15:32:36 +0000'

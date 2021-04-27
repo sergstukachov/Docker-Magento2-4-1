@@ -3,6 +3,7 @@ services:
   nginx:
     image: nginx:latest
     container_name: nginx
+    restart: always
     ports:
       - "80:80"
       - "443:443"
@@ -21,6 +22,7 @@ services:
     ports:
       - "3309:3306"
     container_name: mysql
+    restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=dev01
       - MYSQL_DATABASE=magento
@@ -37,10 +39,12 @@ services:
       - 1025:1025 # smtp server
       - 8025:8025 # web ui
     container_name: mailhog
+    restart: always
 
   php:
     build: ./php
     container_name: php-fpm
+    restart: always
     volumes:
       - ./nginx/www:/var/www
     links:
@@ -49,6 +53,7 @@ services:
   elasticsearch:
       image: elasticsearch:7.8.1
       container_name: elasticsearch
+      restart: always
       ports:
         - "9200:9200"
         - "9300:9300"

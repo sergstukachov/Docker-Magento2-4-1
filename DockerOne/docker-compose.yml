@@ -26,7 +26,7 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=dev01
       - MYSQL_DATABASE=magento
-      - MYSQL_USER=root
+      - MYSQL_USER=mag
       - MYSQL_PASSWORD=dev01
     volumes:
       - ./mysql:/var/lib/mysql

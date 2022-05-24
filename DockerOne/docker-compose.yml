@@ -47,18 +47,9 @@ services:
     restart: always
     volumes:
       - ./nginx/www:/var/www
+      - ./home/user/.ssh:/root/.ssh
     links:
       - mysql
-
-  elasticsearch:
-      image: elasticsearch:7.8.1
-      container_name: elasticsearch
-      restart: always
-      ports:
-        - "9200:9200"
-        - "9300:9300"
-      environment:
-        - "discovery.type=single-node"
 
   portainer:
     image: portainer/portainer
@@ -79,4 +70,18 @@ services:
     ports:
       - "8080:8080"
 
-
+  elasticsearch:
+   image: elasticsearch:7.8.1
+   container_name: elasticsearch
+   restart: always
+   ports:
+     - "9200:9200"
+     - "9300:9300"
+   environment:
+     - "bootstrap.memory_lock=true"
+     - "ES_JAVA_OPTS=-Xms1024m -Xmx1024m"
+     - "discovery.type=single-node"
+   ulimits:
+      memlock:
+        soft: -1
+        hard: -1

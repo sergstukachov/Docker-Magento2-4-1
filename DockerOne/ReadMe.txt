@@ -14,3 +14,9 @@
 4) You can add local ssh-key:
 
 you_project/home/user/.ssh/  and add your ssh-key
+
+After added key, you need:
+
+chmod 700 /home/user/.ssh 
+chmod 644 //home/user/id_rsa.pub 
+chmod 600 /home/user/id_rsa

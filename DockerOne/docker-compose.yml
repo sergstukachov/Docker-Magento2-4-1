@@ -20,7 +20,7 @@ services:
   mysql:
     image: mysql:8.0
     ports:
-      - "3309:3306"
+      - "127.0.0.1:3309:3306"
     container_name: mysql
     restart: always
     environment:
@@ -68,15 +68,15 @@ services:
     environment:
       - ADMINER_DEFAULT_SERVER=mysql
     ports:
-      - "8080:8080"
+      - "127.0.0.1:8080:8080"
 
   elasticsearch:
    image: elasticsearch:7.8.1
    container_name: elasticsearch
    restart: always
    ports:
-     - "9200:9200"
-     - "9300:9300"
+     - "127.0.0.1:9200:9200"
+     - "127.0.0.1:9300:9300"
    environment:
      - "bootstrap.memory_lock=true"
      - "ES_JAVA_OPTS=-Xms1024m -Xmx1024m"
